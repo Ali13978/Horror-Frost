@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: 6a8f194729594c646907025ff856ffee
+timeCreated: 1450197963
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Depth01
+    100002: Depth02
+    100004: Depth03
+    100006: Depth04
+    100008: //RootNode
+    100010: Door02
+    100012: Door02_mesh
+    100014: Door_bottom01
+    100016: Door_top01
+    100018: Door_top02
+    100020: Frame_top01
+    100022: Frame_top02
+    100024: Joint01
+    100026: Knob01
+    100028: Knob01Placement
+    100030: Knob02
+    100032: Width_L
+    100034: Width_R
+    100036: Knob02Placement
+    400000: Depth01
+    400002: Depth02
+    400004: Depth03
+    400006: Depth04
+    400008: //RootNode
+    400010: Door02
+    400012: Door02_mesh
+    400014: Door_bottom01
+    400016: Door_top01
+    400018: Door_top02
+    400020: Frame_top01
+    400022: Frame_top02
+    400024: Joint01
+    400026: Knob01
+    400028: Knob01Placement
+    400030: Knob02
+    400032: Width_L
+    400034: Width_R
+    400036: Knob02Placement
+    4300000: Door02_mesh
+    7400000: Door_open
+    7400002: Door_locked
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Door02_mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Door_open
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 63
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Door02
+        weight: 1
+      - path: Door02/Width_L
+        weight: 1
+      - path: Door02/Width_L/Depth01
+        weight: 1
+      - path: Door02/Width_L/Depth01/Depth03
+        weight: 1
+      - path: Door02/Width_L/Frame_top01
+        weight: 1
+      - path: Door02/Width_R
+        weight: 1
+      - path: Door02/Width_R/Depth02
+        weight: 1
+      - path: Door02/Width_R/Depth02/Depth04
+        weight: 1
+      - path: Door02/Width_R/Frame_top02
+        weight: 1
+      - path: Door02/Width_R/Joint01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Door_top01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Knob01Placement
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Knob01Placement/Knob01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Knob01Placement/Knob02
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_top02
+        weight: 1
+      - path: Door02_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Door_locked
+      takeName: Take 001
+      firstFrame: 67
+      lastFrame: 106.000008
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Door02
+        weight: 1
+      - path: Door02/Width_L
+        weight: 1
+      - path: Door02/Width_L/Depth01
+        weight: 1
+      - path: Door02/Width_L/Depth01/Depth03
+        weight: 1
+      - path: Door02/Width_L/Frame_top01
+        weight: 1
+      - path: Door02/Width_R
+        weight: 1
+      - path: Door02/Width_R/Depth02
+        weight: 1
+      - path: Door02/Width_R/Depth02/Depth04
+        weight: 1
+      - path: Door02/Width_R/Frame_top02
+        weight: 1
+      - path: Door02/Width_R/Joint01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Door_top01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Knob01Placement
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Knob01Placement/Knob01
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_bottom01/Knob01Placement/Knob02
+        weight: 1
+      - path: Door02/Width_R/Joint01/Door_top02
+        weight: 1
+      - path: Door02_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

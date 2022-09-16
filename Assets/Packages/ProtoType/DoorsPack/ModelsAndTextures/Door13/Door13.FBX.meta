@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: f51dfe044dfb94b4aaa7fb30418940fa
+timeCreated: 1449328041
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Border_top01
+    100002: Border_top02
+    100004: //RootNode
+    100006: Door13
+    100008: Door13_mesh
+    100010: Door_border_R
+    100012: Door_depth01
+    100014: Door_depth02
+    100016: Door_joint
+    100018: Door_knobPlacement
+    100020: Door_top01
+    100022: Door_top02
+    100024: Door_top03
+    100026: Door_top04
+    100028: Door_width_L
+    100030: Door_width_R
+    100032: Depth01
+    100034: Depth02
+    100036: Depth03
+    100038: Depth04
+    100040: Door_bottom01
+    100042: Frame_top01
+    100044: Frame_top02
+    100046: Joint01
+    100048: Knob01Placement
+    100050: Lock01
+    100052: Lock02
+    100054: Width_L
+    100056: Width_R
+    400000: Border_top01
+    400002: Border_top02
+    400004: //RootNode
+    400006: Door13
+    400008: Door13_mesh
+    400010: Door_border_R
+    400012: Door_depth01
+    400014: Door_depth02
+    400016: Door_joint
+    400018: Door_knobPlacement
+    400020: Door_top01
+    400022: Door_top02
+    400024: Door_top03
+    400026: Door_top04
+    400028: Door_width_L
+    400030: Door_width_R
+    400032: Depth01
+    400034: Depth02
+    400036: Depth03
+    400038: Depth04
+    400040: Door_bottom01
+    400042: Frame_top01
+    400044: Frame_top02
+    400046: Joint01
+    400048: Knob01Placement
+    400050: Lock01
+    400052: Lock02
+    400054: Width_L
+    400056: Width_R
+    4300000: Door13_mesh
+    7400000: Door_open
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Door13_mesh
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Door_open
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Door13
+        weight: 1
+      - path: Door13/Door_width_L
+        weight: 1
+      - path: Door13/Door_width_L/Door_depth01
+        weight: 1
+      - path: Door13/Door_width_L/Door_depth01/Door_top03
+        weight: 1
+      - path: Door13/Door_width_L/Door_joint
+        weight: 1
+      - path: Door13/Door_width_L/Door_joint/Border_top01
+        weight: 1
+      - path: Door13/Door_width_L/Door_top01
+        weight: 1
+      - path: Door13/Door_width_R
+        weight: 1
+      - path: Door13/Door_width_R/Door_border_R
+        weight: 1
+      - path: Door13/Door_width_R/Door_border_R/Border_top02
+        weight: 1
+      - path: Door13/Door_width_R/Door_border_R/Door_knobPlacement
+        weight: 1
+      - path: Door13/Door_width_R/Door_depth02
+        weight: 1
+      - path: Door13/Door_width_R/Door_depth02/Door_top04
+        weight: 1
+      - path: Door13/Door_width_R/Door_top02
+        weight: 1
+      - path: Door13_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

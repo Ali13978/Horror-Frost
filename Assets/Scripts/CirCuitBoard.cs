@@ -19,7 +19,7 @@ public class CirCuitBoard : MonoBehaviour
     {
         if(myAnimator.GetBool("TurnOnLever") == true)
         { return; }
-        if (Vector3.Distance(PlayerController.instance.gameObject.transform.position, transform.position) >= 6)
+        if (Vector3.Distance(PlayerController.instance.gameObject.transform.position, transform.position) >= PlayerController.instance.Range)
         { return; }
 
         if (PlayerController.instance.OnTargetGameObject == gameObject)

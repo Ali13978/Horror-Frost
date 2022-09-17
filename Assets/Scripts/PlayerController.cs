@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
         instance = this;
     }
 
+    [SerializeField] public int Range = 6;
+
     [SerializeField] LayerMask ObjsMask;
 
     [SerializeField] Transform viewPoint;

@@ -15,6 +15,8 @@ public class UIController : MonoBehaviour
     [SerializeField] public TMP_Text grabbedObjectInfo;
     [SerializeField] public TMP_Text errorText;
 
+    [SerializeField] public GameObject PasscodeScreen;
+
     // Start is called before the first frame update
     void Start()
     {

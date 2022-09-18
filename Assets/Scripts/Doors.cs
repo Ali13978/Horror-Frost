@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Doors : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Doors : MonoBehaviour
         {
             if (PlayerController.instance.OnTargetGameObject == gameObject)
             {
-                if (Input.GetButtonDown("UseButton"))
+                if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
                     UIController.instance.infoText.text = IssueError;
                     UIController.instance.infoText.gameObject.SetActive(true);
@@ -32,7 +33,7 @@ public class Doors : MonoBehaviour
             UIController.instance.infoText.text = "Press E to Open/Close the " + Name;
             UIController.instance.infoText.gameObject.SetActive(true);
 
-            if(Input.GetButtonDown("UseButton"))
+            if(CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
                 if (!myAnimator.GetBool("Open"))
                 {   myAnimator.SetBool("Open", true);   }

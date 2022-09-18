@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class MachineController : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class MachineController : MonoBehaviour
     {
         UIController.instance.infoText.text = "Press E to run machine";
         UIController.instance.infoText.gameObject.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.E))
+        if (CrossPlatformInputManager.GetButtonDown("UseButton"))
         {
             anim.SetBool("MachineStarted", true);
         }
@@ -44,7 +45,7 @@ public class MachineController : MonoBehaviour
         {
             UIController.instance.infoText.text = "Press E to place blade";
             UIController.instance.infoText.gameObject.SetActive(true);
-            if (Input.GetButtonDown("UseButton"))
+            if (CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
                 Blade.SetActive(true);
                 Destroy(GrabbingBlade);
@@ -81,7 +82,7 @@ public class MachineController : MonoBehaviour
         {
             UIController.instance.infoText.text = "Press E to place crate";
             UIController.instance.infoText.gameObject.SetActive(true);
-            if (Input.GetButtonDown("UseButton"))
+            if (CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
                 Crate.SetActive(true);
                 Destroy(PlayerController.instance.grabbingObject.gameObject);

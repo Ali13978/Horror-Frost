@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
 {
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
+        mouseInput = new Vector2(CrossPlatformInputManager.GetAxisRaw("Mouse X"), CrossPlatformInputManager.GetAxisRaw("Mouse Y")) * mouseSensitivity;
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
 
@@ -74,9 +75,9 @@ public class PlayerController : MonoBehaviour
             viewPoint.rotation = Quaternion.Euler(-verticalRotStore, viewPoint.rotation.eulerAngles.y, viewPoint.rotation.eulerAngles.z);
         }
 
-        moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        moveDir = new Vector3(CrossPlatformInputManager.GetAxisRaw("Horizontal"), 0f, CrossPlatformInputManager.GetAxisRaw("Vertical"));
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             activeMoveSpeed = runSpeed;
         }
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, .25f, groundLayers);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (CrossPlatformInputManager.GetButtonDown("Jump") && isGrounded)
         {
             movement.y = jumpForce;
         }
@@ -111,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
         if (grabbingObject != null && GrabbedObjectName != null)
         {
-            if (Input.GetButtonDown("Drop"))
+            if (CrossPlatformInputManager.GetButtonDown("Drop"))
             {
                 grabbingObject.transform.position = transform.position;
                 grabbingObject.SetActive(true);
@@ -135,7 +136,7 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject Object = hit.collider.gameObject;
                 Object.GetComponent<GrabableObject>().ShowGrabInfo();
-                if(Input.GetButtonDown("UseButton"))
+                if(CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
                     Object.GetComponent<GrabableObject>().GrabObject();
                 }

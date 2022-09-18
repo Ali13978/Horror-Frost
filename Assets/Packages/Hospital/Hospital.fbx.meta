@@ -1,0 +1,712 @@
+fileFormatVersion: 2
+guid: f72eba4588da6374b923bb5fd9cfcce3
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base Ground.001
+    second: {fileID: 2100000, guid: 1de6b0a0064380841a87cf337cd11008, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base Ground.002
+    second: {fileID: 2100000, guid: 5f47dcde605dd304691dfef2cb3f9501, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base Ground.003
+    second: {fileID: 2100000, guid: f5350e10eb05c9a4fb3630bdee22b036, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Walls
+    second: {fileID: 2100000, guid: c3c65de0ec6afd844b969207c55942c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bed
+    second: {fileID: 2100000, guid: c3e1cc884337dd245a8e408b643dba49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bench
+    second: {fileID: 2100000, guid: 2e855350018f8944bb2bb7b747c48513, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BigShelf_Stock
+    second: {fileID: 2100000, guid: 7d07a1d43c97e1b4997384c748d2dba9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Case_Door
+    second: {fileID: 2100000, guid: a17ffdc2f6851764abb8045072eee923, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Case_Main
+    second: {fileID: 2100000, guid: 6fe1d118ef976894d9310e60c8a946ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling
+    second: {fileID: 2100000, guid: 43d37fe041e893a4ea24c5c1974ec00a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChairLeather
+    second: {fileID: 2100000, guid: 46781e5e50c8c7042a5551b541f797fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChairOffice
+    second: {fileID: 2100000, guid: 6942c28abf6e1514abda145f5e43d422, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChairWhite
+    second: {fileID: 2100000, guid: 25a58a101f9b40849b840998170d0535, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Construction
+    second: {fileID: 2100000, guid: 74e632694f3dd0a4bb1132eb2f5914de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cupboard
+    second: {fileID: 2100000, guid: 7e3b36d19650570418219b5b3daeb935, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CupboardLight
+    second: {fileID: 2100000, guid: fe6dfb8f3dfdd8445b5190e50044542c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cupboard_Door
+    second: {fileID: 2100000, guid: 6fe181cd0e0945c429442616f7c29f9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CurtainsMedic
+    second: {fileID: 2100000, guid: 6a5bb31e16a09444487f30778f0cf6aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 74343e8da67ea3547aa479e852db4819, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorD_Door
+    second: {fileID: 2100000, guid: ccefa9e4db874874ca33d5e565de355d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorD_Frame
+    second: {fileID: 2100000, guid: df77f5446d8374445a423535d1cf4d23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V2_Door
+    second: {fileID: 2100000, guid: 368953d2febfece41941bd7d8ef60989, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V2_Frame
+    second: {fileID: 2100000, guid: 93d65f6df23838748ae42da75b276e66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V2_Window
+    second: {fileID: 2100000, guid: 3fc0993a8c8c1474ba3cc266d51aacfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Frame
+    second: {fileID: 2100000, guid: 7610fc2f3756fea49a618aa202caf616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GR_Frame
+    second: {fileID: 2100000, guid: 1da25d57aa3414e41bcff7ba3e0193e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GR_Glass
+    second: {fileID: 2100000, guid: 144a831b97e53a847b8f1d6058cf4dc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground OPD
+    second: {fileID: 2100000, guid: 0a4fa7f04905abf47914658b8d786490, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heater
+    second: {fileID: 2100000, guid: b843e7c7821e377439112d6967a81756, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: a633b31585af86945980c92e87f0b609, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 9b7b6c5d84b889f4a9ce86fe36c314d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Matres
+    second: {fileID: 2100000, guid: e964428d332005e48bc0a126246073c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MedRack
+    second: {fileID: 2100000, guid: 7123b10ac5c82f642b557f6d57fbac20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MirrorShelf_Case
+    second: {fileID: 2100000, guid: 9497029caa9572a48b0955269ea81c6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MirrorShelf_Door
+    second: {fileID: 2100000, guid: 82b930d30c51d9048b76707c3075a53f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MorgueBox
+    second: {fileID: 2100000, guid: 2cce9364dc2d972418d096867e9f48a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MorgueBox_Bed
+    second: {fileID: 2100000, guid: 6eb46c49cf254a94586ca7e71a8ad9b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MorgueBox_Door
+    second: {fileID: 2100000, guid: e5ef586069efab1479c66142d699ed0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MorgueTable
+    second: {fileID: 2100000, guid: e2c27d1cb10646c45b1fec3bfad67f3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OPD Wall
+    second: {fileID: 2100000, guid: cb5805f9b7ef7254ba44cc9d60f0c866, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Opearion Theatre Floor
+    second: {fileID: 2100000, guid: 53982cbbcfbf8994ca977130e006e8a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Operation Theatre Wall
+    second: {fileID: 2100000, guid: 630ca7f7394af7548aee344508c2ecc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PC_Monitor
+    second: {fileID: 2100000, guid: 55c62157bdae5a043ab56bd56657d4ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SheetRack
+    second: {fileID: 2100000, guid: 833ea949fadb1da4db02a9ece71702e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SheetRackCase
+    second: {fileID: 2100000, guid: c160f1176e25ce14b99ed29ee69e7e67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sink
+    second: {fileID: 2100000, guid: b808a7f3b4eeba3478daf668577e5791, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sink_V1
+    second: {fileID: 2100000, guid: 8377bd08a95b7d348a9cbd7047d31cd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SmallMetalicCase
+    second: {fileID: 2100000, guid: 2d5d572b1dbcb3f4681e8192461304a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sofa
+    second: {fileID: 2100000, guid: cd62acbb06665b24499f1d9e3b642a35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sofa_Pilow
+    second: {fileID: 2100000, guid: 7dc5e104300bd13479cf996b96cc3f10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SurgeryLamp
+    second: {fileID: 2100000, guid: c89c3e79e7a93f64da11703a87e98045, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SurgeryTable
+    second: {fileID: 2100000, guid: 8ef531ddb8b50e545811f2145846cb95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SurgeryWheelBad
+    second: {fileID: 2100000, guid: 706e7537aae4fcb43914cf3643d0b3fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TV_Retro
+    second: {fileID: 2100000, guid: af6b0115fbd3abf43b47e63f9bba31d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableOffice
+    second: {fileID: 2100000, guid: c4809da061a19f940b403b8abf962dbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableWhite
+    second: {fileID: 2100000, guid: 4b96e18b04721b84bbae4bcab1608a7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table_Bed
+    second: {fileID: 2100000, guid: 25548fb7e7dbb844eb68aebc6c22a6e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tap
+    second: {fileID: 2100000, guid: debed02aa33023c4ba779065553eb614, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toilet.001
+    second: {fileID: 2100000, guid: a0276e13e9e31184ebf8d52eda6f5eea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ToiletDoor
+    second: {fileID: 2100000, guid: 66b0281f3508e4245b1c0d58698cdb9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ToiletWall
+    second: {fileID: 2100000, guid: 43500f2c10eba7b48ab47d5c7a966171, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelChair
+    second: {fileID: 2100000, guid: d659a9cf33972f545aa712f1239d0ccd, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Floor
+    second: {fileID: 2800000, guid: 02118be2f960de640ad4c256821fd3ee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bathroom Walls
+    second: {fileID: 2800000, guid: cbf4b2ddf98062f4c925c301ed2768fc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bed_Albedo
+    second: {fileID: 2800000, guid: 056bab2618926814a9c2f06688258002, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bench_Albedo
+    second: {fileID: 2800000, guid: 0fe052536b583924d9e4f69f7ad9c350, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BigShelf_Stock_Albedo
+    second: {fileID: 2800000, guid: 11932fc44d1ef1f44baa65aa6113bce9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Case_Door_Albedo
+    second: {fileID: 2800000, guid: eeba9490472393c47a4e9e03f13f5fc2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Case_Main_Albedo
+    second: {fileID: 2800000, guid: 595d76075f79ee44ab675475a3cb7260, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ceilling All
+    second: {fileID: 2800000, guid: 2dbf34bc7c245e441a22941c94aa7a37, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChairLeather_Albedo
+    second: {fileID: 2800000, guid: 3a578a90a6fd9494293023a2a8f7b33d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChairOffice_Albedo
+    second: {fileID: 2800000, guid: 847ac16a7610d47438fcbc1af7ba0848, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChairWhite_Albedo
+    second: {fileID: 2800000, guid: f0aebb4593a361e42bdbc06092fb1fd6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CupboardLight_Albedo
+    second: {fileID: 2800000, guid: c2a5cc71bb95c464fa666dd315795359, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cupboard_Albedo
+    second: {fileID: 2800000, guid: 665429eb344ff594b860ddd1da582334, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cupboard_Door_Albedo
+    second: {fileID: 2800000, guid: 4c0c2af4c4f2cc746bac815f35d121ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CurtainsMedic_Albedo
+    second: {fileID: 2800000, guid: fe9eec73a7b1f184a8ee83f38facc01c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V1_Door_Albedo
+    second: {fileID: 2800000, guid: 19c204d494dcfae4fbffa961eb921984, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V1_Frame_Albedo
+    second: {fileID: 2800000, guid: 461cd8a4cbb54c647a3654ad6eb81eed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V2_Door_Albedo
+    second: {fileID: 2800000, guid: 7e6dc23b78468dd479920c6f5415e0b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V2_Frame_Albedo
+    second: {fileID: 2800000, guid: 09f603f714b1b374d8fb1c8d3df584ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DoorD_V2_Window_Albedo
+    second: {fileID: 2800000, guid: 9b86040377f00844da5077696f6220e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Door_V1_Door_Albedo
+    second: {fileID: 2800000, guid: 7c36dce2193929d45b49cdfa32384e92, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Door_V1_Frame_Door_Albedo
+    second: {fileID: 2800000, guid: 58006de372ce1404ca3475cc96cfeb95, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor Main
+    second: {fileID: 2800000, guid: 76b9a4f7d3cc22f49972fefcf1527dde, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GR_Frame_Albedo
+    second: {fileID: 2800000, guid: 5a123c24894b64941848e239e16d05c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GR_Glass_AlbedoTransparency
+    second: {fileID: 2800000, guid: 18434628ff4881b4b9c0c480c5d754b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Heater_Albedo
+    second: {fileID: 2800000, guid: 87d17c9422fb85d47b81a0a8a96a6f9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MedRack_Albedo
+    second: {fileID: 2800000, guid: 715f1d549dddd48429bb2a43c78d519a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MirrorShelf_Case_Albedo
+    second: {fileID: 2800000, guid: 78db988789ca90948bba49f2a0094842, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MirrorShelf_Door_Albedo
+    second: {fileID: 2800000, guid: affca5db0e249a74593f5ebecd8d7145, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MorgueBox_Albedo
+    second: {fileID: 2800000, guid: dcf9e3daae4bb0145a9bff3db591d81b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MorgueBox_Bed_Albedo
+    second: {fileID: 2800000, guid: c50d27cb6eb120d4aae015667ad432f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MorgueBox_Door_Albedo
+    second: {fileID: 2800000, guid: e8a266946a2c56b458b69d30270e128c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MorgueTable_Albedo
+    second: {fileID: 2800000, guid: 2065bb491cf55c74abd5cca66f7ff763, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Operation Theatre Floor
+    second: {fileID: 2800000, guid: f364de0fe79846f43a437ebb14c17675, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Operation theatre wall
+    second: {fileID: 2800000, guid: f2ce81f08a1aff745982613665f835ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PC_Monitor_Albedo
+    second: {fileID: 2800000, guid: e4e475738aa4cad44b20bdee2dadb45a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rooms Floor
+    second: {fileID: 2800000, guid: c0cae77a505bd8044b4a6cdf025b6795, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SheetRackCase_Albedo
+    second: {fileID: 2800000, guid: bd3ead48c97e8044fb737333be61d678, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SheetRack_Albedo
+    second: {fileID: 2800000, guid: 828ea55dcdbad5b469db73d640d0a9d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sink_Sink_AlbedoTransparency
+    second: {fileID: 2800000, guid: 5a3bac1fb09859c4fb1f31c27378688b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sink_V1_Albedo
+    second: {fileID: 2800000, guid: 3202bb2af23860b43957d18199893388, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SmallMetalicCase_Albedo
+    second: {fileID: 2800000, guid: 6990ab0f16f5529438532ff19154a082, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sofa_Albedo
+    second: {fileID: 2800000, guid: ca9e878349b2a254e9eb3e7c8f5e788f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sofa_Pilow_Albedo
+    second: {fileID: 2800000, guid: c37a5f257bcc46748aac40a3dd4d92cf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SurgeryBed_Construction_Albedo
+    second: {fileID: 2800000, guid: 912a32aa8f39e2843834ebb30ccf70f1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SurgeryBed_Matres_Albedo
+    second: {fileID: 2800000, guid: c9776dc4d0a8d1c4d8c81516d56bd8f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SurgeryLamp__Albedo
+    second: {fileID: 2800000, guid: 2b11d28e6ff2b1248b4bea562b6eed06, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SurgeryTable_Albedo
+    second: {fileID: 2800000, guid: d1ba568964e43cf4b9d27d079433a09c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SurgeryWheelBad_Albedo
+    second: {fileID: 2800000, guid: 8cd87ca7594994f489d8d0f955e42762, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TV_Retro_Albedo
+    second: {fileID: 2800000, guid: b34a1af7b4235e1408822855505f07a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TableOffice_Albedo
+    second: {fileID: 2800000, guid: 7af381391c95cf049be23fb1659af852, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TableWhite_Albedo
+    second: {fileID: 2800000, guid: 3ed198db3fa36c846be19bd05f859a9d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Table_Bed_Albedo
+    second: {fileID: 2800000, guid: 0f1259f48b3a79340a66224cf82156fe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tap_Albedo
+    second: {fileID: 2800000, guid: dc53140477bb4d44e8f4186bddb9a25a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ToiletDoor_Albedo
+    second: {fileID: 2800000, guid: 8c2db4e66c644274a9603735bb589e19, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ToiletWall_Albedo
+    second: {fileID: 2800000, guid: 5e2b12e5f35511a4e9dccf3a628000b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Toilet_Albedo
+    second: {fileID: 2800000, guid: ee2b7c2247e9f574094f9a1631c7f495, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 1 144
+    second: {fileID: 2800000, guid: 9fd11c91dd33f7e498974ed6c41471d2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall OPD
+    second: {fileID: 2800000, guid: 1df8b0e63d4ba6645a68cad073ece7ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WheelChair_Albedo
+    second: {fileID: 2800000, guid: a9049c1b4865d0048ba70b30ec2c7f0c, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

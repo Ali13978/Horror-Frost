@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Locker : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class Locker : MonoBehaviour
         {
             UIController.instance.infoText.text = "Press E to enter passcode";
             UIController.instance.infoText.gameObject.SetActive(true);
-            if(Input.GetButtonDown("UseButton"))
+            if(CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class LockedDoor : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class LockedDoor : MonoBehaviour
             {
                 UIController.instance.infoText.text = "Press E to remove planks";
                 UIController.instance.infoText.gameObject.SetActive(true);
-                if(Input.GetButtonDown("UseButton"))
+                if(CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
                     Destroy(planks.gameObject);
                     Collider.GetComponent<Doors>().anyIssue = false;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class CirCuitBoard : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class CirCuitBoard : MonoBehaviour
             {
                 UIController.instance.infoText.text = "Press E to use lever";
                 UIController.instance.infoText.gameObject.SetActive(true);
-                if (Input.GetButtonDown("UseButton"))
+                if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
                     IssueFile.anyIssue = false;
                     myAnimator.SetBool("TurnOnLever", true);
@@ -47,7 +48,7 @@ public class CirCuitBoard : MonoBehaviour
                     UIController.instance.infoText.text = "Press E to place lever";
                     UIController.instance.infoText.gameObject.SetActive(true);
 
-                    if (Input.GetButtonDown("UseButton"))
+                    if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
                         Issue = false;
                         Destroy(PlayerController.instance.grabbingObject.gameObject);

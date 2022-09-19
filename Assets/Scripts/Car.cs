@@ -6,6 +6,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Car : MonoBehaviour
 {
     [SerializeField] Animator Anim;
+    [SerializeField] Animator garageAnim;
     [SerializeField] bool Issue = true;
     bool Started= false;
     // Start is called before the first frame update
@@ -65,5 +66,10 @@ public class Car : MonoBehaviour
             }
         }
 
+    }
+
+    private void OpenGarage()
+    {
+        garageAnim.SetBool("Start", true);
     }
 }

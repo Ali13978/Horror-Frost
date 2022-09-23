@@ -13,12 +13,15 @@ public class MachineController : MonoBehaviour
     [SerializeField] string BladeName;
 
     [SerializeField] GameObject Crate;
+    [SerializeField] GameObject Spirit;
 
     bool issue = true;
+    bool MachineUsed = false;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        Spirit.SetActive(false);
     }
 
     public void RunMachine()
@@ -103,6 +106,9 @@ public class MachineController : MonoBehaviour
     {
         if (Vector3.Distance(PlayerController.instance.gameObject.transform.position, transform.position) >= PlayerController.instance.Range)
         { return; }
+        if(MachineUsed)
+        { return; }
+
         issue = !Blade.activeInHierarchy;
 
         if (!issue)
@@ -123,5 +129,14 @@ public class MachineController : MonoBehaviour
             PlaceCrate();
             BladeManage();
         }
+    }
+
+    private void DestroyCrate()
+    { 
+        if(!Crate.activeInHierarchy)
+        { return; }
+        MachineUsed = true;
+        Spirit.SetActive(true);
+        Destroy(Crate);
     }
 }

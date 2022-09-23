@@ -12,7 +12,7 @@ public class Doors : MonoBehaviour
 
     private void Update()
     {
-        if(Vector3.Distance(PlayerController.instance.gameObject.transform.position, transform.position) >= 6)
+        if(Vector3.Distance(PlayerController.instance.gameObject.transform.position, transform.position) >= PlayerController.instance.Range)
         { return; }
 
         if(anyIssue)

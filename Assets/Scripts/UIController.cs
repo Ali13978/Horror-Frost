@@ -17,15 +17,12 @@ public class UIController : MonoBehaviour
 
     [SerializeField] public GameObject PasscodeScreen;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] public TMP_Text NoOfSpirits;
+    [SerializeField] public GameObject LoadingPannel;
+    [SerializeField] public TMP_Text LivesText;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        LoadingPannel.SetActive(false);
     }
 }

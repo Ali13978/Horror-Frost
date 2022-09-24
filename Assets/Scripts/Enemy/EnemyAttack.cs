@@ -11,4 +11,10 @@ public class EnemyAttack : MonoBehaviour
         if (target == null) return;
         LevelManager.instance.TakeDamage();
     }
+
+    private void AttackOff()
+    {
+        GetComponent<Animator>().SetBool("attack", false);
+    }
+
 }

@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager instance;
 
+
+
     private void Awake()
     {
         instance = this;
@@ -46,9 +48,9 @@ public class LevelManager : MonoBehaviour
 
     private void Die()
     {
-        UIController.instance.LoadingPannel.SetActive(true);
-        PlayerController.instance.transform.position = new Vector3(0, -50, 0);
+        PlayerController.instance.transform.position = new Vector3(50, -50, 50);
         PlayerController.instance.gameObject.SetActive(false);
+        UIController.instance.LoadingPannel.SetActive(true);
         StartCoroutine(Respawn());
     }
 

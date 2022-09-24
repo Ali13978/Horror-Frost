@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         newPos = RandomNavSphere(transform.position, 50, -1);
         navMeshAgent.SetDestination(newPos);
+        Anim.SetTrigger("move");
     }
 
     // Update is called once per frame
@@ -82,7 +83,6 @@ public class EnemyAI : MonoBehaviour
     private void AttackTarget()
     {
         Anim.SetBool("attack", true);
-        Debug.Log(name + " has seeked player and destroying it");
     }
 
     private void FaceTarget()

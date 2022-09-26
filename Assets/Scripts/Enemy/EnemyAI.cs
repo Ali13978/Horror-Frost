@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float Range = 9f;
     [SerializeField] float turnSpeed = 5f;
+    [SerializeField] float WanderRange = 50;
     float distanceToTarget = Mathf.Infinity;
 
     Vector3 newPos;
@@ -20,7 +21,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        newPos = RandomNavSphere(transform.position, 50, -1);
+        newPos = RandomNavSphere(transform.position, WanderRange, -1);
         navMeshAgent.SetDestination(newPos);
         Anim.SetTrigger("move");
     }
@@ -34,7 +35,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (Vector3.Distance(newPos , transform.position) <= navMeshAgent.stoppingDistance)
             {
-                newPos = RandomNavSphere(transform.position, 50, -1);
+                newPos = RandomNavSphere(transform.position, WanderRange, -1);
                 navMeshAgent.SetDestination(newPos);
                 Anim.SetTrigger("move");
             }
@@ -71,7 +72,7 @@ public class EnemyAI : MonoBehaviour
         if (distanceToTarget > Range)
         {
             isProvoked = false;
-            newPos = RandomNavSphere(transform.position, 50, -1);
+            newPos = RandomNavSphere(transform.position, WanderRange, -1);
             navMeshAgent.SetDestination(newPos);
             return;
         }
@@ -96,6 +97,7 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
+        Gizmos.DrawWireSphere(transform.position, WanderRange);
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

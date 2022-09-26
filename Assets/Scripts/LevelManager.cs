@@ -59,6 +59,8 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         PlayerController.instance.transform.position = PlayerRespawnPoint.transform.position;
         UIController.instance.LoadingPannel.SetActive(false);
+        UIController.instance.LoadingPannelText.text = "Loading...";
         PlayerController.instance.gameObject.SetActive(true);
+        PlayerController.instance.TakingDamage = false;
     }
 }

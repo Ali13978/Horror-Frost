@@ -19,7 +19,10 @@ public class UIController : MonoBehaviour
 
     [SerializeField] public TMP_Text NoOfSpirits;
     [SerializeField] public GameObject LoadingPannel;
+    [SerializeField] public TMP_Text LoadingPannelText;
     [SerializeField] public TMP_Text LivesText;
+
+    [SerializeField] public TMP_Text timerText;
 
     private void Start()
     {

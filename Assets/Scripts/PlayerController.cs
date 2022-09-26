@@ -42,23 +42,39 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public GameObject grabbingObject;
     public string GrabbedObjectName;
 
+    [HideInInspector] public bool TakingDamage = false;
+
+    [HideInInspector] public bool VenomDrinked = false;
+    [SerializeField] float VenomTimer = 180;
+    float TimeCounter;
+
     // Start is called before the first frame update
     void Start()
     {
         GrabbedObjectName = null;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        StartCoroutine(EnableAudioListner());
+        TimeCounter = VenomTimer;
     }
-
-    private IEnumerator EnableAudioListner()
-    {
-        yield return new WaitForSeconds(2);
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if(VenomDrinked)
+        {
+            if(!UIController.instance.timerText.gameObject.activeInHierarchy)
+            { UIController.instance.timerText.gameObject.SetActive(true); }
+            TimeCounter -= Time.deltaTime;
+            var timeToDisplay = System.TimeSpan.FromSeconds(TimeCounter);
+
+            UIController.instance.timerText.text = "anti-venom timer: " + timeToDisplay.Minutes.ToString("00") + ":" + timeToDisplay.Seconds.ToString("00");
+            if (TimeCounter <= 0)
+            {
+                VenomDrinked = false;
+                TimeCounter = VenomTimer;
+                UIController.instance.timerText.gameObject.SetActive(false);
+            }
+        }
+
         mouseInput = new Vector2(CrossPlatformInputManager.GetAxisRaw("Mouse X"), CrossPlatformInputManager.GetAxisRaw("Mouse Y")) * mouseSensitivity;
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);

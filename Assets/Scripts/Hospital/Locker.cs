@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class Locker : MonoBehaviour
 {

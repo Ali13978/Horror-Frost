@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Ch2P4 : MonoBehaviour
+public class Ch4P2 : MonoBehaviour
 {
-    [Header("Large Stone")]
-    [SerializeField] bool isLargeStone;
+    [Header("PlaceLadder")]
+    [SerializeField] bool PlaceLadderObj;
+    [SerializeField] GameObject Ladder;
 
-    [Header("Small Stone")]
-    [SerializeField] bool isSmallStone;
+    [Header("Pumpkin")]
+    [SerializeField] bool isPumpkin;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,40 +26,47 @@ public class Ch2P4 : MonoBehaviour
 
         if (PlayerController.instance.OnTargetGameObject == gameObject)
         {
-            if(isLargeStone)
+            if (PlaceLadderObj)
             {
-                if (PlayerController.instance.GrabbedObjectName != "Rod")
+                if (PlayerController.instance.GrabbedObjectName != "Ladder")
                 {
-                    UIController.instance.infoText.text = "I need rod to to move this stone";
+                    UIController.instance.infoText.text = "I need something to go down";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
                 else
                 {
-                    UIController.instance.infoText.text = "Press E to move stone";
+                    UIController.instance.infoText.text = "Press E to place ladder";
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
-                        GetComponent<Animator>().SetTrigger("Move");
+                        Ladder.SetActive(true);
+                        Destroy(PlayerController.instance.grabbingObject.gameObject);
+                        PlayerController.instance.grabbingObject = null;
+                        PlayerController.instance.GrabbedObjectName = null;
+                        UIController.instance.infoText.gameObject.SetActive(false);
+                        UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
+                        Destroy(gameObject);
                     }
                 }
             }
 
-            else if(isSmallStone)
+            else if (isPumpkin)
             {
-                if (PlayerController.instance.GrabbedObjectName != "PickAxe")
+                if (PlayerController.instance.GrabbedObjectName != "Knife")
                 {
-                    UIController.instance.infoText.text = "I need something to break this rock";
+                    UIController.instance.infoText.text = "I need something to cut the pumpkin";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
                 else
                 {
-                    UIController.instance.infoText.text = "Press E to break stone";
+                    UIController.instance.infoText.text = "Press E to cut the pumpkin";
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
                         Destroy(gameObject);
                     }
                 }
+
             }
         }
     }

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Ch2P4 : MonoBehaviour
+public class Ch4P5 : MonoBehaviour
 {
-    [Header("Large Stone")]
-    [SerializeField] bool isLargeStone;
+    [Header("BreakAbleTree")]
+    [SerializeField] bool isTree;
+    [SerializeField] GameObject Logs;
 
-    [Header("Small Stone")]
-    [SerializeField] bool isSmallStone;
+    [Header("Poison")]
+    [SerializeField] bool isPoison;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,37 +25,41 @@ public class Ch2P4 : MonoBehaviour
 
         if (PlayerController.instance.OnTargetGameObject == gameObject)
         {
-            if(isLargeStone)
+            if (isTree)
             {
-                if (PlayerController.instance.GrabbedObjectName != "Rod")
+                if (PlayerController.instance.GrabbedObjectName != "Axe")
                 {
-                    UIController.instance.infoText.text = "I need rod to to move this stone";
+                    UIController.instance.infoText.text = "I need axe to cut the logs";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
                 else
                 {
-                    UIController.instance.infoText.text = "Press E to move stone";
+                    UIController.instance.infoText.text = "Press E to get logs";
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
-                        GetComponent<Animator>().SetTrigger("Move");
+                        Logs.SetActive(true);
+                        Destroy(gameObject);
                     }
                 }
             }
 
-            else if(isSmallStone)
+            else if(isPoison)
             {
-                if (PlayerController.instance.GrabbedObjectName != "PickAxe")
+                if (PlayerController.instance.GrabbedObjectName != "Logs")
                 {
-                    UIController.instance.infoText.text = "I need something to break this rock";
+                    UIController.instance.infoText.text = "Poison can be placed on the log";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
                 else
                 {
-                    UIController.instance.infoText.text = "Press E to break stone";
+                    UIController.instance.infoText.text = "Press E to poison the logs";
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        PlayerController.instance.GrabbedObjectName = "PoisonedLog";
+                        PlayerController.instance.grabbingObject.GetComponent<GrabableObject>().ObjectName = "PoisonedLog";
+                        UIController.instance.grabbedObjectInfo.text = "You are grabbing poisoned log";
                         Destroy(gameObject);
                     }
                 }

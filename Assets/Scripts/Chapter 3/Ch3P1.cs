@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Ch2P4 : MonoBehaviour
+public class Ch3P1 : MonoBehaviour
 {
-    [Header("Large Stone")]
-    [SerializeField] bool isLargeStone;
+    [Header("FactoryDoorStopper")]
+    [SerializeField] bool isFactoryDoor;
 
-    [Header("Small Stone")]
-    [SerializeField] bool isSmallStone;
+    [Header("Locker")]
+    [SerializeField] bool isLockerDoor;
+    [SerializeField] Doors door;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,38 +25,44 @@ public class Ch2P4 : MonoBehaviour
 
         if (PlayerController.instance.OnTargetGameObject == gameObject)
         {
-            if(isLargeStone)
+            if (isFactoryDoor)
             {
-                if (PlayerController.instance.GrabbedObjectName != "Rod")
+                if (PlayerController.instance.GrabbedObjectName != "Spray")
                 {
-                    UIController.instance.infoText.text = "I need rod to to move this stone";
+                    UIController.instance.infoText.text = "I need spray to remove gas smell";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
                 else
                 {
-                    UIController.instance.infoText.text = "Press E to move stone";
-                    UIController.instance.infoText.gameObject.SetActive(true);
-                    if (CrossPlatformInputManager.GetButtonDown("UseButton"))
-                    {
-                        GetComponent<Animator>().SetTrigger("Move");
-                    }
-                }
-            }
-
-            else if(isSmallStone)
-            {
-                if (PlayerController.instance.GrabbedObjectName != "PickAxe")
-                {
-                    UIController.instance.infoText.text = "I need something to break this rock";
-                    UIController.instance.infoText.gameObject.SetActive(true);
-                }
-                else
-                {
-                    UIController.instance.infoText.text = "Press E to break stone";
+                    UIController.instance.infoText.text = "Press E to use spray";
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
                         Destroy(gameObject);
+                    }
+                }
+            }
+
+            else if(isLockerDoor)
+            {
+                if (PlayerController.instance.GrabbedObjectName != "Key")
+                {
+                    UIController.instance.infoText.text = "I need key to open locker";
+                    UIController.instance.infoText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    UIController.instance.infoText.text = "Press E to use key";
+                    UIController.instance.infoText.gameObject.SetActive(true);
+                    if (CrossPlatformInputManager.GetButtonDown("UseButton"))
+                    {
+                        Destroy(PlayerController.instance.grabbingObject.gameObject);
+                        PlayerController.instance.grabbingObject = null;
+                        PlayerController.instance.GrabbedObjectName = null;
+                        UIController.instance.infoText.gameObject.SetActive(false);
+                        UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
+                        door.anyIssue = false;
+                        Destroy(gameObject.GetComponent<Ch3P1>());
                     }
                 }
             }

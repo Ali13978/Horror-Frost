@@ -15,6 +15,7 @@ public class Ch2P5 : MonoBehaviour
 
     [Header("Crate")]
     [SerializeField] bool isCrate;
+    [SerializeField] GameObject Spirit;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +91,7 @@ public class Ch2P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        Spirit.SetActive(true);
                         Destroy(gameObject);
                     }
                 }

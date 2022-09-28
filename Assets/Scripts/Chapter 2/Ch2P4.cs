@@ -10,6 +10,7 @@ public class Ch2P4 : MonoBehaviour
 
     [Header("Small Stone")]
     [SerializeField] bool isSmallStone;
+    [SerializeField] GameObject Spirit;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,11 @@ public class Ch2P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        Destroy(PlayerController.instance.grabbingObject.gameObject);
+                        PlayerController.instance.grabbingObject = null;
+                        PlayerController.instance.GrabbedObjectName = null;
+                        UIController.instance.infoText.gameObject.SetActive(false);
+                        UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
                         GetComponent<Animator>().SetTrigger("Move");
                     }
                 }
@@ -55,6 +61,7 @@ public class Ch2P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        Spirit.SetActive(true);
                         Destroy(gameObject);
                     }
                 }

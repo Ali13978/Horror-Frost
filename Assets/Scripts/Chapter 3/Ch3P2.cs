@@ -32,9 +32,9 @@ public class Ch3P2 : MonoBehaviour
         {
             if (isGearHolder)
             {
-                if (PlayerController.instance.GrabbedObjectName != "Gear")
+                if (PlayerController.instance.GrabbedObjectName != "Gear Box")
                 {
-                    UIController.instance.infoText.text = "I need gear to place here";
+                    UIController.instance.infoText.text = "I need gear box to place here";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
                 else
@@ -56,14 +56,14 @@ public class Ch3P2 : MonoBehaviour
 
             else if (isGear)
             {
-                if (PlayerController.instance.GrabbedObjectName != "Handle")
+                if (PlayerController.instance.GrabbedObjectName != "button")
                 {
-                    UIController.instance.infoText.text = "I need handle to rotate the gear";
+                    UIController.instance.infoText.text = "I need button to start generator";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
                 else
                 {
-                    UIController.instance.infoText.text = "Press E to place handle";
+                    UIController.instance.infoText.text = "Press E to place button";
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {

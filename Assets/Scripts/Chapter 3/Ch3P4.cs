@@ -12,12 +12,14 @@ public class Ch3P4 : MonoBehaviour
     [SerializeField] TMP_InputField PasscodeField;
     [SerializeField] TMP_Text PasscodeText;
     [SerializeField] GameObject PasscodeScreen;
+    [SerializeField] Ch3P4 Rock;
     private int PassCode;
     private int PassCodeEntered;
 
 
     [Header("Rock")]
     [SerializeField] bool isRock;
+    [SerializeField] Ch3P4 Statue;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +50,7 @@ public class Ch3P4 : MonoBehaviour
                 }
             }
 
-            else if(isRock)
+            else if(isRock && Statue == null)
             {
                 if (PlayerController.instance.GrabbedObjectName != "PickAxe")
                 {
@@ -76,10 +78,11 @@ public class Ch3P4 : MonoBehaviour
             if (PassCodeEntered == PassCode)
             {
                 statueAnim.SetTrigger("Move");
+                Rock.Statue = null;
                 PasscodeScreen.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                Destroy(gameObject.GetComponent<Ch3P4>());
+                Destroy(gameObject);
             }
         }
     }

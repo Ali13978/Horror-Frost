@@ -51,9 +51,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GrabbedObjectName = null;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //GrabbedObjectName = null;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         TimeCounter = VenomTimer;
     }
     // Update is called once per frame

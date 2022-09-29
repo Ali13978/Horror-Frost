@@ -10,7 +10,6 @@ public class Ch3P1 : MonoBehaviour
 
     [Header("Locker")]
     [SerializeField] bool isLockerDoor;
-    [SerializeField] Doors door;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +37,11 @@ public class Ch3P1 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        Destroy(PlayerController.instance.grabbingObject.gameObject);
+                        PlayerController.instance.grabbingObject = null;
+                        PlayerController.instance.GrabbedObjectName = null;
+                        UIController.instance.infoText.gameObject.SetActive(false);
+                        UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
                         Destroy(gameObject);
                     }
                 }
@@ -61,8 +65,7 @@ public class Ch3P1 : MonoBehaviour
                         PlayerController.instance.GrabbedObjectName = null;
                         UIController.instance.infoText.gameObject.SetActive(false);
                         UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
-                        door.anyIssue = false;
-                        Destroy(gameObject.GetComponent<Ch3P1>());
+                        Destroy(gameObject);
                     }
                 }
             }

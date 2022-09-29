@@ -7,11 +7,15 @@ public class Ch3P5 : MonoBehaviour
 {
     [Header("BridgeStopper")]
     [SerializeField] bool isBridgeStopper;
+    [SerializeField] GameObject brokenBridge;
     [SerializeField] GameObject RepairedBridge;
 
     [Header("DestroyableTrees")]
     [SerializeField] bool isTree;
     [SerializeField] GameObject Logs;
+
+    [Header("Dig here")]
+    [SerializeField] bool isDigHere;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +50,7 @@ public class Ch3P5 : MonoBehaviour
                         UIController.instance.infoText.gameObject.SetActive(false);
                         UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
                         RepairedBridge.SetActive(true);
+                        Destroy(brokenBridge);
                         Destroy(gameObject);
                     }
                 }
@@ -65,6 +70,24 @@ public class Ch3P5 : MonoBehaviour
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
                         Logs.SetActive(true);
+                        Destroy(gameObject);
+                    }
+                }
+            }
+
+            else if(isDigHere)
+            {
+                if (PlayerController.instance.GrabbedObjectName != "Shovel")
+                {
+                    UIController.instance.infoText.text = "I need shovel to dig it";
+                    UIController.instance.infoText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    UIController.instance.infoText.text = "Press E to dit it";
+                    UIController.instance.infoText.gameObject.SetActive(true);
+                    if (CrossPlatformInputManager.GetButtonDown("UseButton"))
+                    {
                         Destroy(gameObject);
                     }
                 }

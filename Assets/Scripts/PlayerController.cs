@@ -39,22 +39,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rayLength;
     [HideInInspector] public GameObject OnTargetGameObject;
 
-    [HideInInspector] public GameObject grabbingObject;
+    [SerializeField] public GameObject grabbingObject;
     public string GrabbedObjectName;
 
     [HideInInspector] public bool TakingDamage = false;
 
     [HideInInspector] public bool VenomDrinked = false;
     [SerializeField] float VenomTimer = 180;
-    float TimeCounter;
+    float VenomTimeCounter;
 
+    bool TimerStarted;
+    [SerializeField] int StartTimer;
+    [SerializeField] GameObject TimerStartedPlane;
+    [SerializeField] GameObject TimerEndPlane;
+    float TimeCounter;
     // Start is called before the first frame update
     void Start()
     {
-        //GrabbedObjectName = null;
+        GrabbedObjectName = null;
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
-        TimeCounter = VenomTimer;
+        VenomTimeCounter = VenomTimer;
+        TimeCounter = StartTimer;
     }
     // Update is called once per frame
     void Update()
@@ -63,17 +69,35 @@ public class PlayerController : MonoBehaviour
         {
             if(!UIController.instance.timerText.gameObject.activeInHierarchy)
             { UIController.instance.timerText.gameObject.SetActive(true); }
-            TimeCounter -= Time.deltaTime;
-            var timeToDisplay = System.TimeSpan.FromSeconds(TimeCounter);
+            VenomTimeCounter -= Time.deltaTime;
+            var timeToDisplay = System.TimeSpan.FromSeconds(VenomTimeCounter);
 
             UIController.instance.timerText.text = "anti-venom timer: " + timeToDisplay.Minutes.ToString("00") + ":" + timeToDisplay.Seconds.ToString("00");
-            if (TimeCounter <= 0)
+            if (VenomTimeCounter <= 0)
             {
                 VenomDrinked = false;
-                TimeCounter = VenomTimer;
+                VenomTimeCounter = VenomTimer;
                 UIController.instance.timerText.gameObject.SetActive(false);
             }
         }
+
+        if (TimerStarted)
+        {
+            if (!UIController.instance.timerText.gameObject.activeInHierarchy)
+            { UIController.instance.timerText.gameObject.SetActive(true); }
+            TimeCounter -= Time.deltaTime;
+            var timeToDisplay = System.TimeSpan.FromSeconds(TimeCounter);
+
+            UIController.instance.timerText.text = "timer: " + timeToDisplay.Minutes.ToString("00") + ":" + timeToDisplay.Seconds.ToString("00");
+            if (TimeCounter <= 0)
+            {
+                LevelManager.instance.TakeDamage();
+                TimerStarted = false;
+                TimeCounter = StartTimer;
+                UIController.instance.timerText.gameObject.SetActive(false);
+            }
+        }
+
 
         mouseInput = new Vector2(CrossPlatformInputManager.GetAxisRaw("Mouse X"), CrossPlatformInputManager.GetAxisRaw("Mouse Y")) * mouseSensitivity;
 
@@ -126,7 +150,7 @@ public class PlayerController : MonoBehaviour
 
         //Drop Grabbed Object
 
-        if (grabbingObject != null && GrabbedObjectName != null)
+        if (grabbingObject != null || GrabbedObjectName != null)
         {
             if (CrossPlatformInputManager.GetButtonDown("Drop"))
             {
@@ -165,6 +189,21 @@ public class PlayerController : MonoBehaviour
                 OnTargetGameObject = null;
                 UIController.instance.infoText.gameObject.SetActive(false);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject == TimerStartedPlane)
+        {
+            TimerStarted = true;
+        }
+
+        else if(other.gameObject == TimerEndPlane)
+        {
+            TimerStarted = false;
+            TimeCounter = StartTimer;
+            UIController.instance.timerText.gameObject.SetActive(false);
         }
     }
 }

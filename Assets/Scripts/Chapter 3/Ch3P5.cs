@@ -16,11 +16,11 @@ public class Ch3P5 : MonoBehaviour
 
     [Header("Dig here")]
     [SerializeField] bool isDigHere;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

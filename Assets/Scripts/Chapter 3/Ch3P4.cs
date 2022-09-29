@@ -80,8 +80,6 @@ public class Ch3P4 : MonoBehaviour
                 statueAnim.SetTrigger("Move");
                 Rock.Statue = null;
                 PasscodeScreen.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
                 Destroy(gameObject);
             }
         }
@@ -90,7 +88,5 @@ public class Ch3P4 : MonoBehaviour
     public void BackButton()
     {
         PasscodeScreen.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 }

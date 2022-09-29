@@ -11,7 +11,8 @@ public class Ch4P2 : MonoBehaviour
 
     [Header("Pumpkin")]
     [SerializeField] bool isPumpkin;
-
+    [SerializeField] GameObject Spirit;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +64,7 @@ public class Ch4P2 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        Spirit.SetActive(true);
                         Destroy(gameObject);
                     }
                 }

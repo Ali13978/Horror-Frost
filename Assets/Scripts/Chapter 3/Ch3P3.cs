@@ -8,7 +8,7 @@ public class Ch3P3 : MonoBehaviour
     [Header("Box")]
     [SerializeField] bool isBox;
     [SerializeField] GameObject Lock;
-    bool Locked = true;
+    [SerializeField] GameObject Spirit;
 
     [Header("Anti-Venom")]
     [SerializeField] bool isAntiVenom;
@@ -29,42 +29,28 @@ public class Ch3P3 : MonoBehaviour
         {
             if (isBox)
             {
-                if (Locked)
+                if (PlayerController.instance.GrabbedObjectName != "Hatchet")
                 {
-                    if (PlayerController.instance.GrabbedObjectName != "Hatchet")
-                    {
-                        UIController.instance.infoText.text = "It's lock is rusted need hatchet";
-                        UIController.instance.infoText.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        UIController.instance.infoText.text = "Press E to break lock";
-                        UIController.instance.infoText.gameObject.SetActive(true);
-                        if (CrossPlatformInputManager.GetButtonDown("UseButton"))
-                        {
-                            Destroy(Lock);
-                            Locked = false;
-                        }
-                    }
+                    UIController.instance.infoText.text = "I need hatchet to open it";
+                    UIController.instance.infoText.gameObject.SetActive(true);
                 }
-
                 else
                 {
-                    UIController.instance.infoText.text = "Press E to open locker";
+                    UIController.instance.infoText.text = "Press E to open it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
-                        Destroy(gameObject);
-                        //Place the locker open system here
+                        Spirit.SetActive(true);
+                        Destroy(Lock);
                     }
                 }
             }
 
-            else if(isAntiVenom)
+            else if (isAntiVenom)
             {
                 UIController.instance.infoText.text = "Press E to use venom";
                 UIController.instance.infoText.gameObject.SetActive(true);
-                if(CrossPlatformInputManager.GetButtonDown("UseButton"))
+                if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
                     PlayerController.instance.VenomDrinked = true;
                 }

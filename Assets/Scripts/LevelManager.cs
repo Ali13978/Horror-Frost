@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager instance;
 
+    [SerializeField] bool ResetLevel;
 
 
     private void Awake()
@@ -25,6 +26,11 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        if (ResetLevel)
+        {
+            PlayerPrefs.DeleteKey("CurrentChapter");
+        }
+
         UIController.instance.LivesText.text = Lives.ToString();
         if(!PlayerPrefs.HasKey("CurrentChapter"))
         {
@@ -38,7 +44,6 @@ public class LevelManager : MonoBehaviour
                 PlayerController.instance.gameObject.transform.position = ChapterSpawnPoints[i].transform.position;
             }
         }
-
     }
 
     public void TakeDamage()

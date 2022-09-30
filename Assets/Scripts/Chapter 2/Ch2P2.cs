@@ -51,7 +51,17 @@ public class Ch2P2 : MonoBehaviour
                 }
                 else
                 {
-                    GetComponent<MeshCollider>().isTrigger = true;
+                    UIController.instance.infoText.text = "Press E to use shoes";
+                    UIController.instance.infoText.gameObject.SetActive(true);
+                    if (CrossPlatformInputManager.GetButtonDown("UseButton"))
+                    {
+                        Destroy(PlayerController.instance.grabbingObject.gameObject);
+                        PlayerController.instance.grabbingObject = null;
+                        PlayerController.instance.GrabbedObjectName = null;
+                        UIController.instance.infoText.gameObject.SetActive(false);
+                        UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
+                        Destroy(transform.parent.gameObject);
+                    }
                 }
             }
         }

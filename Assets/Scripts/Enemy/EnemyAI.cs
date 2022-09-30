@@ -11,6 +11,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float Range = 9f;
     [SerializeField] float turnSpeed = 5f;
     [SerializeField] float WanderRange = 50;
+    [SerializeField] float StartTimer;
+    float Timer;
+
     float distanceToTarget = Mathf.Infinity;
 
     Vector3 newPos;
@@ -20,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Timer = StartTimer;
         navMeshAgent = GetComponent<NavMeshAgent>();
         newPos = RandomNavSphere(transform.position, WanderRange, -1);
         navMeshAgent.SetDestination(newPos);
@@ -33,8 +37,10 @@ public class EnemyAI : MonoBehaviour
 
         if(!isProvoked)
         {
-            if (Vector3.Distance(newPos , transform.position) <= navMeshAgent.stoppingDistance)
+            Timer -= Time.deltaTime;
+            if (Vector3.Distance(newPos , transform.position) <= navMeshAgent.stoppingDistance ||Timer <= 0)
             {
+                Timer = StartTimer;
                 newPos = RandomNavSphere(transform.position, WanderRange, -1);
                 navMeshAgent.SetDestination(newPos);
                 Anim.SetTrigger("move");
@@ -98,6 +104,8 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
         Gizmos.DrawWireSphere(transform.position, WanderRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, Range );
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

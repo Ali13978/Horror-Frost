@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
     
-    [HideInInspector] public int CollectedSpirits = 0;
+    public int CollectedSpirits = 0;
     [SerializeField] public int ReqSpirits;
     [SerializeField] public int Lives = 3;
 
@@ -91,6 +91,6 @@ public class LevelManager : MonoBehaviour
     public void ResetCollectedSpirits()
     {
         CollectedSpirits = 0;
-        UIController.instance.NoOfSpirits.text = CollectedSpirits.ToString();
+        UIController.instance.ResetSpirits();
     }
 }

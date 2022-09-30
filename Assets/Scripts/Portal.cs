@@ -21,12 +21,15 @@ public class Portal : MonoBehaviour
             if(CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
                 PlayerPrefs.SetInt("CurrentChapter", (PlayerPrefs.GetInt("CurrentChapter") + 1));
-                LevelManager.instance.CollectedSpirits = 0;
-                Destroy(PlayerController.instance.grabbingObject.gameObject);
-                PlayerController.instance.grabbingObject = null;
-                PlayerController.instance.GrabbedObjectName = null;
-                UIController.instance.infoText.gameObject.SetActive(false);
-                UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
+                LevelManager.instance.ResetCollectedSpirits();
+                if (PlayerController.instance.GrabbedObjectName != null)
+                {
+                    Destroy(PlayerController.instance.grabbingObject.gameObject);
+                    PlayerController.instance.grabbingObject = null;
+                    PlayerController.instance.GrabbedObjectName = null;
+                    UIController.instance.infoText.gameObject.SetActive(false);
+                    UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
+                }
                 LevelManager.instance.Die();
             }
         }

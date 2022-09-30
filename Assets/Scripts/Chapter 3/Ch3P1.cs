@@ -10,6 +10,7 @@ public class Ch3P1 : MonoBehaviour
 
     [Header("Locker")]
     [SerializeField] bool isLockerDoor;
+    [SerializeField] GameObject Spirit;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +66,7 @@ public class Ch3P1 : MonoBehaviour
                         PlayerController.instance.GrabbedObjectName = null;
                         UIController.instance.infoText.gameObject.SetActive(false);
                         UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
+                        Spirit.SetActive(true);
                         Destroy(gameObject);
                     }
                 }

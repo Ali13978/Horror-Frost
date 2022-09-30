@@ -20,6 +20,7 @@ public class Ch3P4 : MonoBehaviour
     [Header("Rock")]
     [SerializeField] bool isRock;
     [SerializeField] Ch3P4 Statue;
+    [SerializeField] GameObject Spirit;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +64,7 @@ public class Ch3P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        Spirit.SetActive(true);
                         Destroy(gameObject);
                     }
                 }

@@ -6,10 +6,14 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Spirit : MonoBehaviour
 {
     [SerializeField] GameObject GFX;
+
+    [SerializeField] int CardNumber;
+
+    [SerializeField] List<Material> CardMats;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GFX.GetComponent<Renderer>().material = CardMats[CardNumber];
     }
 
     // Update is called once per frame
@@ -32,7 +36,7 @@ public class Spirit : MonoBehaviour
     private void CollectSpirit()
     {
         LevelManager.instance.CollectedSpirits++;
-        UIController.instance.NoOfSpirits.text = LevelManager.instance.CollectedSpirits.ToString();
+        UIController.instance.CollectSpirit(CardNumber);
         Destroy(gameObject);
     }
 }

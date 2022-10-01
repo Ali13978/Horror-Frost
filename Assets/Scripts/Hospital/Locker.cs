@@ -44,8 +44,6 @@ public class Locker : MonoBehaviour
     public void BackButton()
     {
         UIController.instance.PasscodeScreen.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()
@@ -61,8 +59,6 @@ public class Locker : MonoBehaviour
             UIController.instance.infoText.gameObject.SetActive(true);
             if(CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                 UIController.instance.PasscodeScreen.SetActive(true);
             }
         }

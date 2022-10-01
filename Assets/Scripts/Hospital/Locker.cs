@@ -35,8 +35,6 @@ public class Locker : MonoBehaviour
                 Issue.anyIssue = false;
                 Locked = false;
                 UIController.instance.PasscodeScreen.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
             }
         }
     }

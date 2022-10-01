@@ -45,8 +45,6 @@ public class Ch3P4 : MonoBehaviour
                 UIController.instance.infoText.gameObject.SetActive(true);
                 if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
                     PasscodeScreen.SetActive(true);
                 }
             }

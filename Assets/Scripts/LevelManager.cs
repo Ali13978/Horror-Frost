@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] List<GameObject> ChapterSpawnPoints;
 
+    [SerializeField] GameObject BgAudioObj;
+
     private void Start()
     {
         if (ResetLevel)
@@ -83,6 +85,7 @@ public class LevelManager : MonoBehaviour
         {
             if (i == (PlayerPrefs.GetInt("CurrentChapter") - 1))
             {
+                BgAudioObj.GetComponent<AudiosManager>().PlayBgSound();
                 PlayerController.instance.gameObject.transform.position = ChapterSpawnPoints[i].transform.position;
             }
         }

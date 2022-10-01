@@ -24,7 +24,8 @@ public class GrabableObject : MonoBehaviour
     {
         if (PlayerController.instance.grabbingObject == null && PlayerController.instance.GrabbedObjectName == null)
         {
-
+            PlayerController.instance.gameObject.GetComponent<AudioSource>().clip = GetComponent<AudiosManager>().clips[1];
+            PlayerController.instance.GetComponent<AudioSource>().Play();
             PlayerController.instance.grabbingObject = gameObject;
             PlayerController.instance.GrabbedObjectName = ObjectName;
 

@@ -30,7 +30,7 @@ public class Doors : MonoBehaviour
 
         else if(PlayerController.instance.OnTargetGameObject == gameObject && !anyIssue)
         {
-            UIController.instance.infoText.text = "Press E to Open/Close the " + Name;
+            UIController.instance.infoText.text = "Press E to Open-Close the " + Name;
             UIController.instance.infoText.gameObject.SetActive(true);
 
             if(CrossPlatformInputManager.GetButtonDown("UseButton"))

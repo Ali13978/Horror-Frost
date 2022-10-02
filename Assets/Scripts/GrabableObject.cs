@@ -36,7 +36,7 @@ public class GrabableObject : MonoBehaviour
         else
         {
             UIController.instance.errorText.gameObject.SetActive(true);
-            UIController.instance.errorText.text = "First Throw the Previous item by pressing Q";
+            UIController.instance.errorText.text = "First Throw the Previous item";
             StartCoroutine(TurnOffError());
         }
     }

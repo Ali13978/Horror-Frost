@@ -9,10 +9,13 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     [SerializeField] bool ResetLevel;
+    [SerializeField] GameObject MiniMapCam;
+    [SerializeField] GameObject MainCam;
 
 
     private void Awake()
     {
+        MiniMapCam.GetComponent<AudioListener>().enabled = false;
         instance = this;
     }
     
@@ -26,6 +29,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] GameObject BgAudioObj;
 
+    
     private void Start()
     {
         if (ResetLevel)
@@ -33,7 +37,7 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.DeleteKey("CurrentChapter");
         }
 
-        UIController.instance.LivesText.text = Lives.ToString();
+        UIController.instance.LivesText.text = "X " + Lives.ToString();
         if(!PlayerPrefs.HasKey("CurrentChapter"))
         {
             PlayerPrefs.SetInt("CurrentChapter", DefaultChapter);
@@ -59,27 +63,25 @@ public class LevelManager : MonoBehaviour
 
         else
         {
-            UIController.instance.LivesText.text = Lives.ToString();
+            UIController.instance.LivesText.text = "X " + Lives.ToString();
             Die();
         }
     }
 
     private void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        UIController.instance.DiedScreen.SetActive(true);
     }
 
     public void Die()
     {
         PlayerController.instance.transform.position = new Vector3(50, -50, 50);
         PlayerController.instance.gameObject.SetActive(false);
-        UIController.instance.LoadingPannel.SetActive(true);
-        StartCoroutine(Respawn());
+        MiniMapCam.GetComponent<AudioListener>().enabled = true;
     }
 
-    private IEnumerator Respawn()
+    public void Respawn()
     {
-        yield return new WaitForSeconds(2);
 
         for (int i = 0; i <= ChapterSpawnPoints.Count; i++)
         {
@@ -90,8 +92,17 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        UIController.instance.LoadingPannel.SetActive(false);
-        UIController.instance.LoadingPannelText.text = "Loading...";
+        foreach(GameObject i in UIController.instance.ChapterScreens)
+        {
+            i.SetActive(false);
+        }
+
+        UIController.instance.FrogsOutScreen.SetActive(false);
+        UIController.instance.SpidersOutScreen.SetActive(false);
+        UIController.instance.LifeLostScreen.SetActive(false);
+        UIController.instance.LoadingScreen.SetActive(false);
+
+        MiniMapCam.GetComponent<AudioListener>().enabled = false;
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.TakingDamage = false;
     }

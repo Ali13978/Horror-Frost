@@ -20,9 +20,17 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
 
     bool isProvoked = false;
-    // Start is called before the first frame update
+    [Header("Zombie")]
+    [SerializeField] bool isZombie;
+    [SerializeField] List<AudioClip> Audios;
+    AudioSource audioSource;
+
     void Start()
     {
+        if(isZombie)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
         Timer = StartTimer;
         navMeshAgent = GetComponent<NavMeshAgent>();
         newPos = RandomNavSphere(transform.position, WanderRange, -1);
@@ -37,6 +45,13 @@ public class EnemyAI : MonoBehaviour
 
         if(!isProvoked)
         {
+            if (isZombie)
+            {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+            }
             Timer -= Time.deltaTime;
             if (Vector3.Distance(newPos , transform.position) <= navMeshAgent.stoppingDistance ||Timer <= 0)
             {
@@ -69,6 +84,18 @@ public class EnemyAI : MonoBehaviour
 
         else if (distanceToTarget <= navMeshAgent.stoppingDistance)
         {
+            if (isZombie)
+            {
+                if (!Anim.GetBool("attack"))
+                {
+                    if (audioSource.isPlaying)
+                    {
+                        audioSource.Stop();
+                        audioSource.PlayOneShot(Audios[1]);
+                    }
+                }
+            }
+
             AttackTarget();
         }
     }
@@ -85,6 +112,14 @@ public class EnemyAI : MonoBehaviour
         Anim.SetBool("attack", false);
         Anim.SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
+        if(isZombie)
+        {
+            if(!audioSource.isPlaying)
+            {
+                audioSource.clip = Audios[0];
+                audioSource.Play();
+            }
+        }
     }
 
     private void AttackTarget()

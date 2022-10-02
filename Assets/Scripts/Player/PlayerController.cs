@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] LayerMask ObjsMask;
 
-    [SerializeField] Transform viewPoint;
+    [SerializeField] bool mobilecontrol;
+    [SerializeField] public Transform viewPoint;
     [SerializeField] float mouseSensitivity = 1f;
     private float verticalRotStore;
     private Vector2 mouseInput;
@@ -61,13 +63,14 @@ public class PlayerController : MonoBehaviour
         //Cursor.visible = false;
         VenomTimeCounter = VenomTimer;
         TimeCounter = StartTimer;
+        activeMoveSpeed = moveSpeed;
     }
     // Update is called once per frame
     void Update()
     {
-        if(VenomDrinked)
+        if (VenomDrinked)
         {
-            if(!UIController.instance.timerText.gameObject.activeInHierarchy)
+            if (!UIController.instance.timerText.gameObject.activeInHierarchy)
             { UIController.instance.timerText.gameObject.SetActive(true); }
             VenomTimeCounter -= Time.deltaTime;
             var timeToDisplay = System.TimeSpan.FromSeconds(VenomTimeCounter);
@@ -92,14 +95,13 @@ public class PlayerController : MonoBehaviour
             if (TimeCounter <= 0)
             {
                 LevelManager.instance.TakeDamage();
+                UIController.instance.LifeLostScreen.SetActive(true);
                 TimerStarted = false;
                 TimeCounter = StartTimer;
                 UIController.instance.timerText.gameObject.SetActive(false);
             }
         }
 
-
-        mouseInput = new Vector2(CrossPlatformInputManager.GetAxisRaw("Mouse X"), CrossPlatformInputManager.GetAxisRaw("Mouse Y")) * mouseSensitivity;
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
 
@@ -121,7 +123,7 @@ public class PlayerController : MonoBehaviour
         {
             activeMoveSpeed = runSpeed;
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             activeMoveSpeed = moveSpeed;
         }
@@ -167,16 +169,16 @@ public class PlayerController : MonoBehaviour
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
         ray.origin = cam.transform.position;
-        
+
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength, ObjsMask))
         {
             OnTargetGameObject = hit.collider.gameObject;
 
-            if(hit.collider.gameObject.tag == "GrabableObject")
+            if (hit.collider.gameObject.tag == "GrabableObject")
             {
                 GameObject Object = hit.collider.gameObject;
                 Object.GetComponent<GrabableObject>().ShowGrabInfo();
-                if(CrossPlatformInputManager.GetButtonDown("UseButton"))
+                if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
                     Object.GetComponent<GrabableObject>().GrabObject();
                 }
@@ -194,16 +196,42 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == TimerStartedPlane)
+        if (other.gameObject == TimerStartedPlane)
         {
             TimerStarted = true;
         }
 
-        else if(other.gameObject == TimerEndPlane)
+        else if (other.gameObject == TimerEndPlane)
         {
             TimerStarted = false;
             TimeCounter = StartTimer;
             UIController.instance.timerText.gameObject.SetActive(false);
+        }
+    }
+    
+    private void LateUpdate()
+    {
+        if (!mobilecontrol)
+        {
+            mouseInput = new Vector2(CrossPlatformInputManager.GetAxisRaw("Mouse X"), CrossPlatformInputManager.GetAxisRaw("Mouse Y")) * mouseSensitivity;
+        }
+
+        else
+        {
+
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Moved)
+                {
+                    mouseInput = new Vector2(touch.deltaPosition.x, touch.deltaPosition.y) * mouseSensitivity;
+                }
+
+                else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                {
+                    mouseInput = Vector2.zero;
+                }
+                
+            }
         }
     }
 }

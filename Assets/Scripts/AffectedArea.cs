@@ -8,6 +8,7 @@ public class AffectedArea : MonoBehaviour
     {
         if(other.gameObject == PlayerController.instance.gameObject)
         {
+            UIController.instance.LifeLostScreen.SetActive(true);
             LevelManager.instance.TakeDamage();
         }
     }

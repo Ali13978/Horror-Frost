@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class Portal : MonoBehaviour
             if(CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
                 PlayerPrefs.SetInt("CurrentChapter", (PlayerPrefs.GetInt("CurrentChapter") + 1));
+
+                if(PlayerPrefs.GetInt("CurrentChapter") >= 5)
+                {
+                    PlayerPrefs.SetInt("CurrentChapter", 1);
+                    SceneManager.LoadScene(2);
+                }
+
                 LevelManager.instance.ResetCollectedSpirits();
                 if (PlayerController.instance.GrabbedObjectName != null)
                 {
@@ -31,6 +39,14 @@ public class Portal : MonoBehaviour
                     UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
                 }
                 LevelManager.instance.Die();
+
+                for (int i = 0; i <= UIController.instance.ChapterScreens.Count; i++)
+                {
+                    if (i == (PlayerPrefs.GetInt("CurrentChapter") - 1))
+                    {
+                        UIController.instance.ChapterScreens[i].SetActive(true);
+                    }
+                }
             }
         }
 

@@ -17,20 +17,21 @@ public class EnemyAttack : MonoBehaviour
         {
             if (!PlayerController.instance.VenomDrinked)
             {
+                UIController.instance.FrogsOutScreen.SetActive(true);
                 LevelManager.instance.TakeDamage();
             }
-            UIController.instance.LoadingPannelText.text = "Anti venom may help against these frogs";
         }
         else if(isScorpian)
         {
             if (PlayerController.instance.GrabbedObjectName != "PoisonedLog")
             {
+                UIController.instance.SpidersOutScreen.SetActive(true);
                 LevelManager.instance.TakeDamage();
             }
-            UIController.instance.LoadingPannelText.text = "I should make poisoned logs against the spiders";
         }
         else
         {
+            UIController.instance.LifeLostScreen.SetActive(true);
             LevelManager.instance.TakeDamage();
         }
     }

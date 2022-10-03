@@ -25,8 +25,14 @@ public class Portal : MonoBehaviour
 
                 if(PlayerPrefs.GetInt("CurrentChapter") >= 5)
                 {
-                    PlayerPrefs.SetInt("CurrentChapter", 1);
                     SceneManager.LoadScene(2);
+                }
+
+                if(PlayerPrefs.GetInt("CurrentChapter") == 4)
+                {
+                    PlayerController.instance.TimerStarted = false;
+                    PlayerController.instance.TimeCounter = PlayerController.instance.StartTimer;
+                    UIController.instance.timerText.gameObject.SetActive(false);
                 }
 
                 LevelManager.instance.ResetCollectedSpirits();

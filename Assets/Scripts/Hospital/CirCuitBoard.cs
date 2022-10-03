@@ -32,6 +32,7 @@ public class CirCuitBoard : MonoBehaviour
                 if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
                     IssueFile.anyIssue = false;
+                    UIController.instance.ObjectiveText.gameObject.SetActive(false);
                     myAnimator.SetBool("TurnOnLever", true);
                 }
             }
@@ -39,6 +40,8 @@ public class CirCuitBoard : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "lever")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and place lever in the circuit board";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need lever to place here";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -50,6 +53,7 @@ public class CirCuitBoard : MonoBehaviour
 
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Issue = false;
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         MainLever.SetActive(true);

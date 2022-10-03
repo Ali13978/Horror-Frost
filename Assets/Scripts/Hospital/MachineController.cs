@@ -41,6 +41,8 @@ public class MachineController : MonoBehaviour
 
         if (PlayerController.instance.GrabbedObjectName == null && PlayerController.instance.grabbingObject == null)
         {
+            UIController.instance.ObjectiveText.text = "Find and place blade on machine";
+            UIController.instance.ObjectiveText.gameObject.SetActive(true);
             UIController.instance.infoText.text = "I need blade to place here in machine";
             UIController.instance.infoText.gameObject.SetActive(true);
         }
@@ -50,6 +52,7 @@ public class MachineController : MonoBehaviour
             UIController.instance.infoText.gameObject.SetActive(true);
             if (CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
+                UIController.instance.ObjectiveText.gameObject.SetActive(false);
                 Blade.SetActive(true);
                 Destroy(GrabbingBlade);
                 PlayerController.instance.grabbingObject = null;
@@ -57,11 +60,6 @@ public class MachineController : MonoBehaviour
                 UIController.instance.infoText.gameObject.SetActive(false);
                 UIController.instance.grabbedObjectInfo.gameObject.SetActive(false);
             }
-        }
-        else
-        {
-            UIController.instance.infoText.text = "I need something else to place here";
-            UIController.instance.infoText.gameObject.SetActive(true);
         }
     }
 
@@ -72,6 +70,8 @@ public class MachineController : MonoBehaviour
 
         if (PlayerController.instance.GrabbedObjectName == null && PlayerController.instance.grabbingObject == null)
         {
+            UIController.instance.ObjectiveText.text = "Find and place crate on machine";
+            UIController.instance.ObjectiveText.gameObject.SetActive(true);
             UIController.instance.infoText.text = "I need something needed to be destroyed here";
             UIController.instance.infoText.gameObject.SetActive(true);
         }
@@ -79,6 +79,8 @@ public class MachineController : MonoBehaviour
         else if (PlayerController.instance.GrabbedObjectName != "crate")
         {
             UIController.instance.infoText.text = "I need something else to place here";
+            UIController.instance.ObjectiveText.text = "Find and place crate on machine";
+            UIController.instance.ObjectiveText.gameObject.SetActive(true);
             UIController.instance.infoText.gameObject.SetActive(true);
         }
         else if (PlayerController.instance.GrabbedObjectName == "crate")
@@ -88,6 +90,7 @@ public class MachineController : MonoBehaviour
             if (CrossPlatformInputManager.GetButtonDown("UseButton"))
             {
                 Crate.SetActive(true);
+                UIController.instance.ObjectiveText.gameObject.SetActive(false);
                 Destroy(PlayerController.instance.grabbingObject.gameObject);
                 PlayerController.instance.grabbingObject = null;
                 PlayerController.instance.GrabbedObjectName = null;

@@ -24,6 +24,8 @@ public class Ch1P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "PoisonedMeat")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and give poisoned meat to spider to kill her";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to give this spider to kill her";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -33,6 +35,7 @@ public class Ch1P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;

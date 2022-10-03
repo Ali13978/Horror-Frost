@@ -33,6 +33,7 @@ public class Locker : MonoBehaviour
             if(PassCodeEntered == PassCode)
             {
                 Issue.anyIssue = false;
+                UIController.instance.ObjectiveText.gameObject.SetActive(false);
                 Locked = false;
                 UIController.instance.PasscodeScreen.SetActive(false);
             }

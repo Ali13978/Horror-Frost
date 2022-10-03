@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
     {
         distanceToTarget = Vector3.Distance(target.position, transform.position);
 
-        if(!isProvoked)
+        if (!isProvoked)
         {
             if (isZombie)
             {
@@ -53,7 +53,7 @@ public class EnemyAI : MonoBehaviour
                 }
             }
             Timer -= Time.deltaTime;
-            if (Vector3.Distance(newPos , transform.position) <= navMeshAgent.stoppingDistance ||Timer <= 0)
+            if (Vector3.Distance(newPos, transform.position) <= navMeshAgent.stoppingDistance || Timer <= 0)
             {
                 Timer = StartTimer;
                 newPos = RandomNavSphere(transform.position, WanderRange, -1);
@@ -62,16 +62,31 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if(isProvoked)
+        if (isProvoked)
         {
-            EngageTarget();
+            if (!PlayerController.instance.inSafeArea)
+            {
+                EngageTarget();
+            }
+
+            else
+            {
+                chaseRange = 0.1f;
+                isProvoked = false;
+                StartCoroutine(ChaseRangeBack());
+            }
         }
 
-        else if(distanceToTarget <= chaseRange)
+        else if (distanceToTarget <= chaseRange)
         {
             isProvoked = true;
         }
+    }
 
+    private IEnumerator ChaseRangeBack()
+    {
+        yield return new WaitForSeconds(7);
+        chaseRange = 20;
     }
 
     private void EngageTarget()
@@ -104,6 +119,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (distanceToTarget > Range)
         {
+            UIController.instance.ZombieChaseInfo.SetActive(false);
+
             isProvoked = false;
             newPos = RandomNavSphere(transform.position, WanderRange, -1);
             navMeshAgent.SetDestination(newPos);
@@ -114,6 +131,8 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent.SetDestination(target.position);
         if(isZombie)
         {
+            UIController.instance.ZombieChaseInfo.SetActive(true);
+
             if(!audioSource.isPlaying)
             {
                 audioSource.clip = Audios[0];

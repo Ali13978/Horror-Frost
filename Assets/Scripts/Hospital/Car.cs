@@ -41,21 +41,26 @@ public class Car : MonoBehaviour
 
             if (PlayerController.instance.GrabbedObjectName == null && PlayerController.instance.grabbingObject == null)
             {
+                UIController.instance.ObjectiveText.text = "Find and fill engine oil in the car";
+                UIController.instance.ObjectiveText.gameObject.SetActive(true);
                 UIController.instance.infoText.text = "I need something to make this car working";
                 UIController.instance.infoText.gameObject.SetActive(true);
             }
 
             else if (PlayerController.instance.GrabbedObjectName != "Engine Oil")
             {
+                UIController.instance.ObjectiveText.text = "Find and fill engine oil in the car";
+                UIController.instance.ObjectiveText.gameObject.SetActive(true);
                 UIController.instance.infoText.text = "I need something else to use here";
                 UIController.instance.infoText.gameObject.SetActive(true);
             }
             else if (PlayerController.instance.GrabbedObjectName == "Engine Oil")
             {
-                UIController.instance.infoText.text = "Press E to use engine oil";
+                UIController.instance.infoText.text = "Press E to fill engine oil";
                 UIController.instance.infoText.gameObject.SetActive(true);
                 if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
+                    UIController.instance.ObjectiveText.gameObject.SetActive(false);
                     Issue = false;
                     Destroy(PlayerController.instance.grabbingObject.gameObject);
                     PlayerController.instance.grabbingObject = null;

@@ -35,6 +35,8 @@ public class Ch3P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Logs")
                 {
+                    UIController.instance.ObjectiveText.text = "Find logs to repair bridge";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need logs to repair bridge";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -44,6 +46,7 @@ public class Ch3P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -60,6 +63,8 @@ public class Ch3P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Axe")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use axe to cut trees";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need axe to cut the logs";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -69,6 +74,7 @@ public class Ch3P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Logs.SetActive(true);
                         Destroy(gameObject);
                     }
@@ -79,6 +85,8 @@ public class Ch3P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Shovel")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use shovel to dig grave";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need shovel to dig it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -88,6 +96,7 @@ public class Ch3P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(gameObject);
                     }
                 }

@@ -34,6 +34,8 @@ public class Ch2P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "tiedPlanks")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and give tied planks to stranger at side of the wooden house";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "Stranger: First take the tied planks for me to enter the house";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -43,6 +45,7 @@ public class Ch2P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -58,6 +61,8 @@ public class Ch2P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "rope")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use rope to tie these planks";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to tie these planks";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -67,6 +72,7 @@ public class Ch2P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -82,6 +88,8 @@ public class Ch2P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "PickAxe")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use pickaxe to destroy the crate";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need pickaxe to break this crate";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -91,6 +99,7 @@ public class Ch2P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Spirit.SetActive(true);
                         Destroy(gameObject);
                     }

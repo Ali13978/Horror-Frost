@@ -41,6 +41,8 @@ public class Ch3P4 : MonoBehaviour
         {
             if (isStatue)
             {
+                UIController.instance.ObjectiveText.text = "Find and enter passcode in the statue";
+                UIController.instance.ObjectiveText.gameObject.SetActive(true);
                 UIController.instance.infoText.text = "Press E to enter passcode";
                 UIController.instance.infoText.gameObject.SetActive(true);
                 if (CrossPlatformInputManager.GetButtonDown("UseButton"))
@@ -53,6 +55,8 @@ public class Ch3P4 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "PickAxe")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use pickaxe to break rock of statue";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need pickaxe to break this rock";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -62,6 +66,7 @@ public class Ch3P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Spirit.SetActive(true);
                         Destroy(gameObject);
                     }
@@ -77,6 +82,7 @@ public class Ch3P4 : MonoBehaviour
             PassCodeEntered = System.Convert.ToInt32(PasscodeField.text);
             if (PassCodeEntered == PassCode)
             {
+                UIController.instance.ObjectiveText.gameObject.SetActive(false);
                 statueAnim.SetTrigger("Move");
                 Rock.Statue = null;
                 PasscodeScreen.SetActive(false);

@@ -29,6 +29,8 @@ public class Ch2P4 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Rod")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use rod to move the stone";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need rod to to move this stone";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -38,6 +40,7 @@ public class Ch2P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -52,6 +55,8 @@ public class Ch2P4 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "PickAxe")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use pickaxe to break small rock";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to break this rock";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -61,6 +66,7 @@ public class Ch2P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Spirit.SetActive(true);
                         Destroy(gameObject);
                     }

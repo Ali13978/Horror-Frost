@@ -30,6 +30,8 @@ public class Ch2P3 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Ladder")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use ladder at the side of bridge to go down";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to go down";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -39,6 +41,7 @@ public class Ch2P3 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Ladder.SetActive(true);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
@@ -54,6 +57,8 @@ public class Ch2P3 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Knife")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use knife to cut the pumpkin";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to cut the pumpkin";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -63,6 +68,7 @@ public class Ch2P3 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;

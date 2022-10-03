@@ -34,6 +34,8 @@ public class Ch3P2 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Gear Box")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use gear box in the generator";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need gear box to place here";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -43,6 +45,7 @@ public class Ch3P2 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -58,6 +61,8 @@ public class Ch3P2 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "button")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and place button to use generator";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need button to start generator";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -67,6 +72,7 @@ public class Ch3P2 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -80,7 +86,7 @@ public class Ch3P2 : MonoBehaviour
 
             else if (isHandle)
             {
-                UIController.instance.infoText.text = "Press E to rotate the handle";
+                UIController.instance.infoText.text = "Press E to use the generator";
                 UIController.instance.infoText.gameObject.SetActive(true);
                 if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {

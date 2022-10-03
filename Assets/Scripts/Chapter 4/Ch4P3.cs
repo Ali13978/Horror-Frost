@@ -47,6 +47,8 @@ public class Ch4P3 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Cloth")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use cloth to wet it using water in bucket";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I can wet the cloth piece here";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -56,6 +58,7 @@ public class Ch4P3 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         PlayerController.instance.grabbingObject.GetComponent<GrabableObject>().ObjectName = "wet cloth";
                         PlayerController.instance.GrabbedObjectName = "wet cloth";
                         UIController.instance.grabbedObjectInfo.text = "You are grabbing the wet cloth";
@@ -68,6 +71,8 @@ public class Ch4P3 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "wet cloth")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use wet cloth to clean it";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to clean it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -77,6 +82,7 @@ public class Ch4P3 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -108,6 +114,8 @@ public class Ch4P3 : MonoBehaviour
 
             else if(isPasscodeDevice)
             {
+                UIController.instance.ObjectiveText.text = "Find and enter passcode on the top of grave";
+                UIController.instance.ObjectiveText.gameObject.SetActive(true);
                 UIController.instance.infoText.text = "Press E to enter passcode";
                 UIController.instance.infoText.gameObject.SetActive(true);
                 if (CrossPlatformInputManager.GetButtonDown("UseButton"))
@@ -126,6 +134,7 @@ public class Ch4P3 : MonoBehaviour
             PassCodeEntered = System.Convert.ToInt32(PasscodeField.text);
             if (PassCodeEntered == PassCode)
             {
+                UIController.instance.ObjectiveText.gameObject.SetActive(false);
                 Anim.SetBool("Move", true);
                 PasscodeScreen.SetActive(false);
                 Destroy(gameObject);

@@ -31,6 +31,8 @@ public class Chapter2P1 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Stone")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use stone to remove this van door";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need stone to destroy this door";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -40,6 +42,7 @@ public class Chapter2P1 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;
@@ -66,6 +69,8 @@ public class Chapter2P1 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Container")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use barrel to remove this trap";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need barrel to block this bear trap";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -75,6 +80,7 @@ public class Chapter2P1 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;

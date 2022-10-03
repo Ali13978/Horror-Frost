@@ -29,6 +29,8 @@ public class Ch4P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Axe")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use axe to cut trees";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need axe to cut the logs";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -38,6 +40,7 @@ public class Ch4P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Logs.SetActive(true);
                         Destroy(gameObject);
                     }
@@ -48,6 +51,8 @@ public class Ch4P5 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Logs")
                 {
+                    UIController.instance.ObjectiveText.text = "Find logs and use poison to make it poison";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "Poison can be placed on the log";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -57,6 +62,7 @@ public class Ch4P5 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(true);
                         PlayerController.instance.GrabbedObjectName = "PoisonedLog";
                         PlayerController.instance.grabbingObject.GetComponent<GrabableObject>().ObjectName = "PoisonedLog";
                         UIController.instance.grabbedObjectInfo.text = "You are grabbing poisoned log";

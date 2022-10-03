@@ -41,6 +41,9 @@ public class UIController : MonoBehaviour
 
     [SerializeField] public GameObject DiedScreen;
 
+    [SerializeField] public TMP_Text ObjectiveText;
+
+    [SerializeField] public GameObject ZombieChaseInfo;
 
     public void CollectSpirit(int x)
     {
@@ -63,8 +66,8 @@ public class UIController : MonoBehaviour
 
     public void ExitLevel()
     {
-        LoadingScreen.SetActive(true);
-        SceneManager.LoadScene(0);
+        Time.timeScale = 0;
+        ExitWarningScreen.SetActive(true);
     }
 
     public void OutContinueButton()
@@ -82,11 +85,13 @@ public class UIController : MonoBehaviour
     public void ExitWarningNo()
     {
         ExitWarningScreen.SetActive(false);
+        Time.timeScale = 1;
         LevelManager.instance.Respawn();
     }
 
     public void ExitWarningYes()
     {
+        Time.timeScale = 1;
         LoadingScreen.SetActive(true);
         SceneManager.LoadScene(0);
     }

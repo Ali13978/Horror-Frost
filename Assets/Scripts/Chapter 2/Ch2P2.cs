@@ -28,6 +28,8 @@ public class Ch2P2 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Shovel")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use shovel to dig the grave";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need shovel to dig it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -37,6 +39,7 @@ public class Ch2P2 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(gameObject);
                     }
                 }
@@ -46,6 +49,8 @@ public class Ch2P2 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Shoes")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use shoes to reach the shovel";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need some shoes to enter here";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -55,6 +60,7 @@ public class Ch2P2 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;

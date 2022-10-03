@@ -8,6 +8,7 @@ public class LockedDoor : MonoBehaviour
     [SerializeField] GameObject planks;
     [SerializeField] GameObject Collider;
 
+    [SerializeField] bool isLockedDoor;
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +21,11 @@ public class LockedDoor : MonoBehaviour
         {
             if(PlayerController.instance.GrabbedObjectName != "crowbar")
             {
+                if (isLockedDoor)
+                {
+                    UIController.instance.ObjectiveText.text = "Find and use crowbar to remove these planks";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
+                }
                 UIController.instance.infoText.text = "I need something to remove these planks";
                 UIController.instance.infoText.gameObject.SetActive(true);
             }
@@ -29,6 +35,10 @@ public class LockedDoor : MonoBehaviour
                 UIController.instance.infoText.gameObject.SetActive(true);
                 if(CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
+                    if (isLockedDoor)
+                    {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
+                    }
                     Destroy(planks.gameObject);
                     Collider.GetComponent<Doors>().anyIssue = false;
                     Destroy(gameObject.GetComponent<LockedDoor>());

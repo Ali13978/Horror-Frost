@@ -10,6 +10,9 @@ public class Doors : MonoBehaviour
     [SerializeField] string IssueError;
     [SerializeField] string Name;
 
+    [SerializeField] bool isFridge;
+    [SerializeField] bool islocker;
+
     private void Update()
     {
         if(Vector3.Distance(PlayerController.instance.gameObject.transform.position, transform.position) >= PlayerController.instance.Range)
@@ -21,6 +24,17 @@ public class Doors : MonoBehaviour
             {
                 if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                 {
+                    if (isFridge)
+                    {
+                        UIController.instance.ObjectiveText.text = "I need to find the electric board to turn off the electricity";
+                        UIController.instance.ObjectiveText.gameObject.SetActive(true);
+                    }
+
+                    else if(islocker)
+                    {
+                        UIController.instance.ObjectiveText.text = "Find and enter passcode in this locker";
+                        UIController.instance.ObjectiveText.gameObject.SetActive(true);
+                    }
                     UIController.instance.infoText.text = IssueError;
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }

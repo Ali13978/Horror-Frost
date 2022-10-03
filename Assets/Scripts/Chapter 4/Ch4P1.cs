@@ -32,6 +32,8 @@ public class Ch4P1 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Shovel")
                 {
+                    UIController.instance.ObjectiveText.text = "Find shovel to dig grave";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need shovel to dig it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -41,6 +43,7 @@ public class Ch4P1 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(gameObject);
                     }
                 }
@@ -50,6 +53,8 @@ public class Ch4P1 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Potion")
                 {
+                    UIController.instance.ObjectiveText.text = "Find potion to make it poison using flowers";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I can make potion magical using these flowers";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -59,6 +64,7 @@ public class Ch4P1 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         PlayerController.instance.grabbingObject.GetComponent<GrabableObject>().ObjectName = "Magical potion";
                         PlayerController.instance.GrabbedObjectName = "Magical potion";
                         UIController.instance.grabbedObjectInfo.text = "You are grabbing the magical potion";
@@ -71,6 +77,8 @@ public class Ch4P1 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Magical potion")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use magical potion to open tomb";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need magical potion to place here";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -80,6 +88,7 @@ public class Ch4P1 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
                         PlayerController.instance.GrabbedObjectName = null;

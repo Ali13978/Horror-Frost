@@ -31,6 +31,8 @@ public class Ch3P3 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Hatchet")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use hatchet to open crate";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need hatchet to open it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -40,6 +42,7 @@ public class Ch3P3 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Spirit.SetActive(true);
                         Destroy(Lock);
                     }

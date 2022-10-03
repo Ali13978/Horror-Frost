@@ -31,6 +31,8 @@ public class Ch4P2 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Ladder")
                 {
+                    UIController.instance.ObjectiveText.text = "Find ladder to go down in well";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to go down";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -40,6 +42,7 @@ public class Ch4P2 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Ladder.SetActive(true);
                         Destroy(PlayerController.instance.grabbingObject.gameObject);
                         PlayerController.instance.grabbingObject = null;
@@ -55,6 +58,8 @@ public class Ch4P2 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Knife")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use knife to cut the pumpkin";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to cut the pumpkin";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -64,6 +69,7 @@ public class Ch4P2 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Spirit.SetActive(true);
                         Destroy(gameObject);
                     }

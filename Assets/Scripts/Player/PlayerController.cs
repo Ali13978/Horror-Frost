@@ -50,11 +50,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float VenomTimer = 180;
     float VenomTimeCounter;
 
-    bool TimerStarted;
-    [SerializeField] int StartTimer;
+    public bool TimerStarted;
+    [SerializeField] public int StartTimer;
     [SerializeField] GameObject TimerStartedPlane;
     [SerializeField] GameObject TimerEndPlane;
-    float TimeCounter;
+    public float TimeCounter;
+
+    [SerializeField] public bool inSafeArea;
+
     // Start is called before the first frame update
     void Start()
     {

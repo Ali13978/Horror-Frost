@@ -30,6 +30,8 @@ public class Ch4P4 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "Shovel")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use shovel to dig grave";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need something to dig it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -39,6 +41,7 @@ public class Ch4P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Destroy(gameObject);
                     }
                 }
@@ -48,6 +51,8 @@ public class Ch4P4 : MonoBehaviour
             {
                 if (PlayerController.instance.GrabbedObjectName != "PickAxe")
                 {
+                    UIController.instance.ObjectiveText.text = "Find and use pickaxe to destroy statue";
+                    UIController.instance.ObjectiveText.gameObject.SetActive(true);
                     UIController.instance.infoText.text = "I need pickaxe to destroy it";
                     UIController.instance.infoText.gameObject.SetActive(true);
                 }
@@ -57,6 +62,7 @@ public class Ch4P4 : MonoBehaviour
                     UIController.instance.infoText.gameObject.SetActive(true);
                     if (CrossPlatformInputManager.GetButtonDown("UseButton"))
                     {
+                        UIController.instance.ObjectiveText.gameObject.SetActive(false);
                         Spirit.SetActive(true);
                         Destroy(gameObject);
                     }

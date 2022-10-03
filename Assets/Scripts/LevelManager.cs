@@ -1,7 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,13 +10,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] bool ResetLevel;
     [SerializeField] GameObject MiniMapCam;
     [SerializeField] GameObject MainCam;
-
-
-    private void Awake()
-    {
-        MiniMapCam.GetComponent<AudioListener>().enabled = false;
-        instance = this;
-    }
     
     public int CollectedSpirits = 0;
     [SerializeField] public int ReqSpirits;
@@ -29,23 +21,31 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] GameObject BgAudioObj;
 
-    
-    private void Start()
+    private void Awake()
     {
+        MiniMapCam.GetComponent<AudioListener>().enabled = false;
+        instance = this;
+
         if (ResetLevel)
         {
             PlayerPrefs.DeleteKey("CurrentChapter");
         }
 
-        UIController.instance.LivesText.text = "X " + Lives.ToString();
-        if(!PlayerPrefs.HasKey("CurrentChapter"))
+        if (!PlayerPrefs.HasKey("CurrentChapter"))
         {
             PlayerPrefs.SetInt("CurrentChapter", DefaultChapter);
         }
 
-        for(int i = 0; i<= ChapterSpawnPoints.Count; i++)
+    }
+    
+    
+    private void Start()
+    {
+        UIController.instance.LivesText.text = "X " + Lives.ToString();
+
+        for (int i = 0; i <= ChapterSpawnPoints.Count; i++)
         {
-            if(i == (PlayerPrefs.GetInt("CurrentChapter") - 1))
+            if (i == (PlayerPrefs.GetInt("CurrentChapter") - 1))
             {
                 PlayerController.instance.gameObject.transform.position = ChapterSpawnPoints[i].transform.position;
             }

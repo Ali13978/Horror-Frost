@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SceneManage : MonoBehaviour
 {
@@ -27,7 +26,7 @@ public class SceneManage : MonoBehaviour
     public void continueGame()
     {
         LoadingScreen.SetActive(true);
-        SceneManager.LoadScene(1);
+        LoadingScreen.GetComponent<LoadingScreen>().LoadingOn(1);
     }
 
     public void newGame()
@@ -44,7 +43,7 @@ public class SceneManage : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("CurrentChapter");
         LoadingScreen.SetActive(true);
-        SceneManager.LoadScene(1);
+        LoadingScreen.GetComponent<LoadingScreen>().LoadingOn(1);
     }
 
     public void QuitGame()

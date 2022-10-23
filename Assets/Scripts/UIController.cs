@@ -72,7 +72,8 @@ public class UIController : MonoBehaviour
 
     public void OutContinueButton()
     {
-        UIController.instance.LoadingScreen.SetActive(true);
+        LoadingScreen.SetActive(true);
+        LoadingScreen.GetComponent<LoadingScreen>().LoadingOn(1);
         LevelManager.instance.Respawn();
     }
 
@@ -93,12 +94,13 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 1;
         LoadingScreen.SetActive(true);
-        SceneManager.LoadScene(0);
+        LoadingScreen.GetComponent<LoadingScreen>().LoadingOn(0);
     }
 
     public void PortalContinue()
     {
-        UIController.instance.LoadingScreen.SetActive(true);
+        LoadingScreen.SetActive(true);
+        LoadingScreen.GetComponent<LoadingScreen>().LoadingOn(1);
         LevelManager.instance.Respawn();
     }
 
